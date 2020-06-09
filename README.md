@@ -30,7 +30,7 @@
 - 创建MyApplication类继承框架的AfApplication
 
 ```java
-import cn.appoa.aframework.app.AfApplication;
+import cn.yhong.aframework.app.AfApplication;
 
 public class MyApplication extends AfApplication {
 
@@ -138,19 +138,19 @@ public class MyApplication extends AfApplication {
 ```java
         <!-- 图片多选 -->
         <activity
-            android:name="cn.appoa.wximageselector.ShowBigImageListActivity"
+            android:name="cn.yhong.wximageselector.ShowBigImageListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeBlack" />
         <activity
-            android:name="cn.appoa.wximageselector.ClipImageActivity"
+            android:name="cn.yhong.wximageselector.ClipImageActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeBlack" />
         <activity
-            android:name="cn.appoa.wximageselector.ImageSelectorActivity"
+            android:name="cn.yhong.wximageselector.ImageSelectorActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeBlack" />
         <activity
-            android:name="cn.appoa.wximageselector.PreviewActivity"
+            android:name="cn.yhong.wximageselector.PreviewActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeBlack" />
 ```

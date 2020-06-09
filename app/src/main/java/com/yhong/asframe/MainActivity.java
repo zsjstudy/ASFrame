@@ -78,10 +78,7 @@ public class MainActivity extends AbsListActivity {
 
     @Override
     public void initData() {
-        //requestAllPermissions();
         super.initData();
-
-
     }
 
 
