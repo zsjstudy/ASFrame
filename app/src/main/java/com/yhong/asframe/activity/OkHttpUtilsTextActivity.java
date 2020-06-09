@@ -17,10 +17,10 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import cn.yhong.aframework.listener.OkHttpDataListener;
-import cn.yhong.aframework.listener.OkHttpSuccessListener;
+import cn.yhong.aframework.okhttputils.OkHttpDataListener;
+import cn.yhong.aframework.okhttputils.OkHttpSuccessListener;
 import cn.yhong.aframework.utils.AtyUtils;
-import cn.yhong.aframework.utils.MyOkHttpUtils;
+import cn.yhong.aframework.okhttputils.MyOkHttpUtils;
 
 /**
  * Created by 17639 on 2020/6/8.

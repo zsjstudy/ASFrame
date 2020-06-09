@@ -122,8 +122,7 @@ public class ZmQrCodeActivity extends BaseImageActivity
         // 扫码结果
         AtyUtils.i("扫码结果", result);
         AtyUtils.showShort(mActivity, result, false);
-        setResult(RESULT_OK, new Intent()
-                .putExtra("result", result));
+        setResult(RESULT_OK, new Intent().putExtra("result", result));
         finish();
     }
 

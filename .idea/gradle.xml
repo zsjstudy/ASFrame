@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/WxImageSelector" />
             <option value="$PROJECT_DIR$/WxVoiceSelector" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/fileselectlibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

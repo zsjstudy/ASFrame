@@ -80,6 +80,7 @@ dependencies {
     implementation project(':WxCameraView')//拍摄视频，选择本地视频
     implementation project(':WxImageSelector')//图片多选
     implementation project(':WxVoiceSelector')//语音录制
+    implementation project(':fileselectlibrary')//文件选择
     debugImplementation dpes["leakcanary1"]
     releaseImplementation dpes["leakcanary2"]
 }

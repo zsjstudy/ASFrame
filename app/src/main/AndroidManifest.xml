@@ -208,6 +208,8 @@
         <activity android:name="com.yhong.asframe.activity.ZmShakeActivity" />
         <!-- 测试OKHTTPUtils -->
         <activity android:name="com.yhong.asframe.activity.OkHttpUtilsTextActivity" />
+        <!-- 选择文件上传 -->
+        <activity android:name=".activity.ChooseFileUplaodActivity" />
 
 
     </application>

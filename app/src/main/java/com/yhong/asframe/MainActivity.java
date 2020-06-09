@@ -4,6 +4,7 @@ import android.view.KeyEvent;
 
 import com.yhong.asframe.activity.AbsListActivity;
 import com.yhong.asframe.activity.BannerActivity;
+import com.yhong.asframe.activity.ChooseFileUplaodActivity;
 import com.yhong.asframe.activity.CommonUtilsActivity;
 import com.yhong.asframe.activity.CustomWidgetActivity;
 import com.yhong.asframe.activity.GithubProjectActivity;
@@ -51,6 +52,7 @@ public class MainActivity extends AbsListActivity {
                 "微信扫一扫",
                 "微信摇一摇",
                 "测试OKHTTPutils",
+                "选择文件上传",
         };
     }
 
@@ -70,6 +72,7 @@ public class MainActivity extends AbsListActivity {
                 ZmQrCodeActivity.class,
                 ZmShakeActivity.class,
                 OkHttpUtilsTextActivity.class,
+                ChooseFileUplaodActivity.class,
         };
     }
 

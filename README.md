@@ -18,11 +18,12 @@
 ```java
     dependencies {
             ...
-            implementation 'com.github.zsjstudy:ASFrame:Tag'
+             // implementation 'com.github.zsjstudy:ASFrame:VERSION_CODE'
+            implementation 'com.github.zsjstudy:ASFrame:1.0.1'
     }
 ```
 
-用这里的真实发行版本号, 替换 VERSION_CODE
+用这里的真实发行版本号, 替换 VERSION_CODE,目前版本为1.0.1
 
 **注意：**两个都必须要写，要不然无法加载成功。
 

@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/WxImageSelector/WxImageSelector.iml" filepath="$PROJECT_DIR$/WxImageSelector/WxImageSelector.iml" />
       <module fileurl="file://$PROJECT_DIR$/WxVoiceSelector/WxVoiceSelector.iml" filepath="$PROJECT_DIR$/WxVoiceSelector/WxVoiceSelector.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fileselectlibrary/fileselectlibrary.iml" filepath="$PROJECT_DIR$/fileselectlibrary/fileselectlibrary.iml" />
     </modules>
   </component>
 </project>

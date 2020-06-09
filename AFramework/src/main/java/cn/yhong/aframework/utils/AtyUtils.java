@@ -365,7 +365,7 @@ public class AtyUtils {
     }
 
     /**
-     * 拨打电话
+     * 拨打电话  直接拨打
      *
      * @param activity
      * @param phone
@@ -390,6 +390,20 @@ public class AtyUtils {
                 showShort(activity, R.string.no_call_phone_permission, false);
             }
         });
+    }
+
+    /**
+     * 拨打电话  跳转到拨打电话界面
+     *
+     * @param activity
+     * @param phone
+     */
+    public static void ToPhoneBoard(final AfActivity activity, final String phone) {
+        if (activity == null)
+            return;
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phone));
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        activity.startActivity(intent);
     }
 
     /**
