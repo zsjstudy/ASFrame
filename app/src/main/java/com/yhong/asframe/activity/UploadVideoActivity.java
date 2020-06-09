@@ -3,6 +3,7 @@ package com.yhong.asframe.activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.hardware.SensorManager;
+import android.media.MediaMetadataRetriever;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Base64;
@@ -115,8 +116,16 @@ public class UploadVideoActivity extends BaseActivity implements View.OnClickLis
      * @param title 视频标题
      */
     private void playVideo(int type, String url, String image, String title) {
+        MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+        try {
+            retriever.setDataSource(url);
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        }
+        String orientation = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_ROTATION);//视频方向   0, 90, 180, or 270
+
         Intent intent = new Intent(mActivity, JZVideoPlayerActivity.class);
-//        intent.putExtra("type", type);
+        intent.putExtra("orientation", orientation);
         intent.putExtra("url", url);
         intent.putExtra("image", image);
         intent.putExtra("title", title);

@@ -26,7 +26,7 @@ import cn.yhong.aframework.utils.MyOkHttpUtils;
  * Created by 17639 on 2020/6/8.
  */
 
-public class TextActivity extends BaseActivity {
+public class OkHttpUtilsTextActivity extends BaseActivity {
 
     private EditText et1, et2;
     private Button button;
@@ -59,7 +59,7 @@ public class TextActivity extends BaseActivity {
                 OkHttpUtils.post().url("http://9y.toushizhiku.com/api/sms_login")
                         .params(params)
                         .headers(getLoginHeads(mActivity))
-                        .build().execute(new OkHttpSuccessListener(TextActivity.this, "登录", 3) {
+                        .build().execute(new OkHttpSuccessListener(OkHttpUtilsTextActivity.this, "登录", 3) {
                     @Override
                     public void onSuccessResponse(String response) {
                         if (API.filterJson(response)) {
@@ -116,7 +116,7 @@ public class TextActivity extends BaseActivity {
 //        OkHttpUtils.post().url("http://9y.toushizhiku.com/api/portal/advertisement/index")
 //                .params(params)
 //                .headers(getLoginHeads(mActivity))
-//                .build().execute(new OkHttpSuccessListener(TextActivity.this, "广告图", 3) {
+//                .build().execute(new OkHttpSuccessListener(OkHttpUtilsTextActivity.this, "广告图", 3) {
 //            @Override
 //            public void onSuccessResponse(String response) {
 //                if (API.filterJson(response)) {
@@ -131,7 +131,7 @@ public class TextActivity extends BaseActivity {
 //        });
 
 //        MyOkHttpUtils.post_NoCallBack("http://9y.toushizhiku.com/api/portal/advertisement/index", params, getLoginHeads(mActivity))
-//                .execute(new OkHttpSuccessListener(TextActivity.this, "广告图", 3) {
+//                .execute(new OkHttpSuccessListener(OkHttpUtilsTextActivity.this, "广告图", 3) {
 //                    @Override
 //                    public void onSuccessResponse(String response) {
 //
@@ -144,7 +144,7 @@ public class TextActivity extends BaseActivity {
 //                });
 
 //        MyOkHttpUtils.post_CallBack("http://9y.toushizhiku.com/api/portal/advertisement/index", params, getLoginHeads(mActivity),
-//                new OkHttpSuccessListener(TextActivity.this, "广告图", 3) {
+//                new OkHttpSuccessListener(OkHttpUtilsTextActivity.this, "广告图", 3) {
 //            @Override
 //            public void onSuccessResponse(String response) {
 //

@@ -7,8 +7,8 @@ import com.yhong.asframe.activity.BannerActivity;
 import com.yhong.asframe.activity.CommonUtilsActivity;
 import com.yhong.asframe.activity.CustomWidgetActivity;
 import com.yhong.asframe.activity.GithubProjectActivity;
+import com.yhong.asframe.activity.OkHttpUtilsTextActivity;
 import com.yhong.asframe.activity.RefreshBeanActivity;
-import com.yhong.asframe.activity.TextActivity;
 import com.yhong.asframe.activity.UploadAvatarActivity;
 import com.yhong.asframe.activity.UploadImageActivity;
 import com.yhong.asframe.activity.UploadVideoActivity;
@@ -69,7 +69,7 @@ public class MainActivity extends AbsListActivity {
                 WebViewActivity.class,
                 ZmQrCodeActivity.class,
                 ZmShakeActivity.class,
-                TextActivity.class,
+                OkHttpUtilsTextActivity.class,
         };
     }
 
