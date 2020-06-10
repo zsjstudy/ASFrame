@@ -81,6 +81,7 @@ public class WebViewActivity extends BaseImageActivity {
                 RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
         rootLayout.addView(webView);
 
+
         pb = new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
         pb.setProgressDrawable(this.getResources().getDrawable(R.drawable.pb_layer_list));
         pb.setMax(100);
