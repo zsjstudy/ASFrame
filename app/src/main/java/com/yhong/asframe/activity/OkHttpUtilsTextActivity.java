@@ -42,7 +42,7 @@ public class OkHttpUtilsTextActivity extends BaseActivity {
         et1 = findViewById(R.id.et1);
         et2 = findViewById(R.id.et2);
         button = findViewById(R.id.logdin);
-
+    
     }
 
     @Override
