@@ -1,31 +1,23 @@
-package com.yhong.asframe.activity;
+package cn.jzvd;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
-import com.yhong.asframe.R;
-import com.yhong.asframe.base.BaseActivity;
-import com.yhong.asframe.widget.JZMediaIjk;
-
-import cn.jzvd.JZDataSource;
-import cn.jzvd.JZUtils;
-import cn.jzvd.Jzvd;
-import cn.jzvd.JzvdStd;
 
 /**
  * Created by 17639 on 2020/6/9.
  */
 
-public class JZVideoPlayerActivity extends BaseActivity implements View.OnClickListener {
+public class JZVideoPlayerActivity extends AppCompatActivity implements View.OnClickListener {
 
     RelativeLayout play_rl;
     JzvdStd mVideoPlayer;
@@ -36,32 +28,32 @@ public class JZVideoPlayerActivity extends BaseActivity implements View.OnClickL
     private String url, image, title, orientation;
 
     @Override
-    public void initIntent(Intent intent) {
-        url = intent.getStringExtra("url");
-        image = intent.getStringExtra("image");
-        title = intent.getStringExtra("title");
-        orientation = intent.getStringExtra("orientation");
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_jzvideo_player);
+        initView();
+        initData();
     }
 
-    @Override
-    public void initContent(Bundle savedInstanceState) {
-        setContent(R.layout.activity_jzvideo_player);
-    }
 
-    @Override
     public void initView() {
-        super.initView();
+        url = getIntent().getStringExtra("url");
+        image = getIntent().getStringExtra("image");
+        title = getIntent().getStringExtra("title");
+        orientation = getIntent().getStringExtra("orientation");
+
         play_rl = findViewById(R.id.play_rl);
         play_rl.setOnClickListener(this);
         mVideoPlayer = findViewById(R.id.video_player);
-        if (Integer.valueOf(orientation) > 0) {//如果大于0说明视频旋转了，需要转回来
-            mVideoPlayer.videoRotation = 90;
+        if(!TextUtils.isEmpty(orientation)){
+            if (Integer.valueOf(orientation) > 0) {//如果大于0说明视频旋转了，需要转回来
+                mVideoPlayer.videoRotation = 90;
+            }
         }
     }
 
-    @Override
     public void initData() {
-        mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mSensorEventListener = new Jzvd.JZAutoFullscreenListener();
 
         playVideo(url);

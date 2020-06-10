@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import com.cjt2325.cameralibrary.JCameraView;
 import com.cjt2325.cameralibrary.JCameraViewActivity;
+import cn.jzvd.JZVideoPlayerActivity;
 import com.yhong.asframe.R;
 import com.yhong.asframe.base.BaseActivity;
 

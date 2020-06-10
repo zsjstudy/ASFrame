@@ -29,6 +29,7 @@ import java.net.URL;
 
 /**
  * Created by YBD-TECH029 on 2019/3/22.
+ * 图片处理工具类
  */
 
 public class ImageUtils {

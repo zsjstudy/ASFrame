@@ -77,7 +77,11 @@
             android:name="com.cjt2325.cameralibrary.JCameraViewActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppFullTheme" />
-
+        <!-- 视频预览 -->
+        <activity
+            android:name="cn.jzvd.JZVideoPlayerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullTheme" />
         <!-- 启动页 -->
         <activity
             android:name="com.yhong.asframe.StartActivity"
@@ -147,8 +151,6 @@
         <activity android:name="com.yhong.asframe.activity.HeightWrapViewPagerActivity" />
         <!-- UPMarqueeView -->
         <activity android:name="com.yhong.asframe.activity.UPMarqueeViewActivity" />
-        <!-- 视频预览 -->
-        <activity android:name="com.yhong.asframe.activity.JZVideoPlayerActivity" />
         <!-- SideBar -->
         <activity
             android:name="com.yhong.asframe.activity.SideBarActivity"

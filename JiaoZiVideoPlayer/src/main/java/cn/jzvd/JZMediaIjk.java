@@ -1,4 +1,4 @@
-package com.yhong.asframe.widget;
+package cn.jzvd;
 
 import android.graphics.SurfaceTexture;
 import android.media.AudioManager;
@@ -8,8 +8,6 @@ import android.view.Surface;
 
 import java.io.IOException;
 
-import cn.jzvd.JZMediaInterface;
-import cn.jzvd.Jzvd;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 import tv.danmaku.ijk.media.player.IjkTimedText;

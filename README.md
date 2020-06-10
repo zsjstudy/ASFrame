@@ -37,7 +37,7 @@
             implementation 'com.github.zsjstudy.ASFrame:QrCodeScan:VERSION_CODE'
             //下拉刷新上拉加载框架
             implementation 'com.github.zsjstudy.ASFrame:SmartRefreshLayoutFragment:VERSION_CODE'
-            //选择、拍照视频
+            //选择、拍照视频 如果是以此种方法集成，想要预览视频的话需要把JiaoZiVideoPlayer也集成
             implementation 'com.github.zsjstudy.ASFrame:WxCameraView:VERSION_CODE'
             //图片多选、单选
             implementation 'com.github.zsjstudy.ASFrame:WxImageSelector:VERSION_CODE'
@@ -217,7 +217,7 @@ public class MyApplication extends AfApplication {
 ```java
         <!-- 视频播放 -->
         <activity
-            android:name="com.yhong.asframe.activity.JZVideoPlayerActivity"
+            android:name="cn.jzvd.JZVideoPlayerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/AppThemeFullscreen" />
 ```

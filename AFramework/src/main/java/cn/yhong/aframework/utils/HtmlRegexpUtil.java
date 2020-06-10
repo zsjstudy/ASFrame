@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 /**
  * Created by toushisx-08 on 2019/12/25.
- * 去除副本中一些不要的标签
+ * 去除副文本中一些不要的标签
  */
 
 public class HtmlRegexpUtil {

@@ -68,8 +68,6 @@ dependencies {
     implementation dpes["recyclerview"]
     implementation dpes["multidex"]
     implementation dpes["banner"]
-    implementation dpes["ijkplayer-java"]
-    implementation dpes["ijkplayer-armv7a"]
     implementation(dpes["ultraviewpager"]) {
         transitive = true
     }
