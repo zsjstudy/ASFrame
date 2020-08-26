@@ -14,6 +14,7 @@ import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
@@ -24,6 +25,7 @@ import com.anthonycr.grant.PermissionsManager;
 import com.anthonycr.grant.PermissionsResultAction;
 import com.lzy.okgo.OkGo;
 import com.megabox.android.slide.SlideBackActivity;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import cn.yhong.aframework.R;
 import cn.yhong.aframework.dialog.DefaultLoadingDialog;
@@ -82,6 +84,13 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
      */
     protected P mPresenter;
 
+    /**
+     * 顶部标题，如果有暗夜模式的情况下使用这个
+     */
+    protected View view_title_bar;
+
+    protected SmartRefreshLayout smartRefreshLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -134,6 +143,11 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
         rootlayout.setBackgroundColor(ContextCompat.getColor(mActivity, R.color.colorBgLighterGray));
         layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
+        view_title_bar = initSkinTitleBar();
+        if (view_title_bar != null) {
+            layout.addView(view_title_bar, new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        }
         titlebar = initTitlebar();
         if (titlebar != null) {
             layout.addView(titlebar, new LinearLayout.LayoutParams(
@@ -142,8 +156,17 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
         content = new FrameLayout(this);
         content.setId(R.id.fl_fragment);
         initContent(savedInstanceState);
-        layout.addView(content, new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT, 1.0f));
+
+        smartRefreshLayout = initSmartRefreshLayout();
+        if (smartRefreshLayout != null) {
+            smartRefreshLayout.addView(content,new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT, 1.0f));
+            layout.addView(smartRefreshLayout, new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT, 1.0f));
+        }else {
+            layout.addView(content, new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT, 1.0f));
+        }
         bottom = initBottomView();
         if (bottom != null) {
             layout.addView(bottom, new LinearLayout.LayoutParams(
@@ -193,6 +216,20 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
     }
 
     /**
+     * 初始化头部
+     */
+    public View initSkinTitleBar() {
+        return null;
+    }
+
+    /**
+     * 初始化滚动布局，类似于ios的弹性上来拉拽
+     */
+    public SmartRefreshLayout initSmartRefreshLayout() {
+        return null;
+    }
+
+    /**
      * 初始化底部
      */
     public View initBottomView() {
@@ -205,6 +242,7 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
     public void initIntent(Intent intent) {
 
     }
+
 
     /**
      * 初始化Presenter

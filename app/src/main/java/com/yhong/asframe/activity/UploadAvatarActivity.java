@@ -2,17 +2,25 @@ package com.yhong.asframe.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.scwang.smartrefresh.layout.utils.SnackbarUtils;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.yhong.asframe.R;
 import com.yhong.asframe.base.BaseImageActivity;
+import com.yhong.asframe.utils.InitRefreshView;
+import com.yhong.asframe.utils.InitTitleBar;
 
 import java.io.File;
 import java.util.Calendar;
@@ -22,24 +30,49 @@ import cn.yhong.aframework.dialog.DatePickerDialog;
 import cn.yhong.aframework.listener.OnCallbackListener;
 import cn.yhong.aframework.titlebar.BaseTitlebar;
 import cn.yhong.aframework.titlebar.DefaultTitlebar;
+import cn.yhong.aframework.utils.AtyUtils;
 
 /**
  * 头像上传
  */
-public class UploadAvatarActivity extends BaseImageActivity
-        implements View.OnClickListener, OnCallbackListener {
+public class UploadAvatarActivity extends BaseImageActivity implements View.OnClickListener, OnCallbackListener
+    ,OnRefreshListener{
 
     @Override
-    public BaseTitlebar initTitlebar() {
-        return new DefaultTitlebar.Builder(this).setTitle("头像上传")
-                .setBackImage(R.drawable.back_white).setMenuText("保存")
-                .setMenuListener(new BaseTitlebar.OnClickMenuListener() {
+    public View initSkinTitleBar() {
+        return new InitTitleBar.Builder(mActivity).setTitle("头像上传")
+                .setTitleColor(ContextCompat.getColor(mActivity,R.color.colorWhite))
+                .setTitleBold()
+//                .setTitleTypeface(Typeface.defaultFromStyle(Typeface.NORMAL))
+                .setMenuText("保存")
+                .setMenuTextColor(ContextCompat.getColor(mActivity,R.color.colorWhite))
+                .setMenuImage(getResources().getDrawable(R.drawable.back))
+                .setMenuImage2(getResources().getDrawable(R.drawable.back))
+                .setMenuListener(new InitTitleBar.OnClickMenuListener() {
                     @Override
                     public void onClickMenu(View view) {
-                        //保存用户资料
+                        AtyUtils.showShort(mActivity,"保存成功",false);
                     }
-                }).create();
+                })
+                .create().getView();
     }
+
+    @Override
+    public SmartRefreshLayout initSmartRefreshLayout() {
+        return new InitRefreshView(mActivity).getEnableRefreshAndLoadMoreView(true);
+    }
+
+    //    @Override
+//    public BaseTitlebar initTitlebar() {
+//        return new DefaultTitlebar.Builder(this).setTitle("头像上传")
+//                .setBackImage(R.drawable.back_white).setMenuText("保存")
+//                .setMenuListener(new BaseTitlebar.OnClickMenuListener() {
+//                    @Override
+//                    public void onClickMenu(View view) {
+//                        //保存用户资料
+//                    }
+//                }).create();
+//    }
 
     @Override
     public void initContent(Bundle savedInstanceState) {
@@ -63,6 +96,8 @@ public class UploadAvatarActivity extends BaseImageActivity
         tv_birthday.setOnClickListener(this);
         tv_constellation.setOnClickListener(this);
         tv_area.setOnClickListener(this);
+
+        smartRefreshLayout.setOnRefreshListener(this);
     }
 
     @Override
@@ -198,4 +233,8 @@ public class UploadAvatarActivity extends BaseImageActivity
         }
     }
 
+    @Override
+    public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+        smartRefreshLayout.finishRefresh(2000);
+    }
 }

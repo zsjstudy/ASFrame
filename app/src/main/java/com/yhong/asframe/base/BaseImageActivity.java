@@ -23,5 +23,9 @@ public abstract class BaseImageActivity<P extends BasePresenter> extends AfImage
             titlebar.setBackgroundColor(ContextCompat.getColor(mActivity, R.color.colorDefaultTitlebarBg));
             AtyUtils.setPaddingTop(mActivity, titlebar);
         }
+        if (view_title_bar != null) {
+            view_title_bar.setBackgroundColor(ContextCompat.getColor(mActivity, R.color.colorDefaultTitlebarBg));
+            AtyUtils.setPaddingTop(mActivity, view_title_bar);
+        }
     }
 }

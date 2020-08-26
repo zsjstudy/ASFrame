@@ -38,5 +38,6 @@ dependencies {
     api files('libs/zm-bus-event-1.0.jar')
     api files('libs/zm-http-volley-1.2.jar')
     api files('libs/zm-imageloader-1.0.jar')
+    api dpes["refreshlayout"]
     api dpes["okhttputils"]
 }

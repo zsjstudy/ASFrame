@@ -10,9 +10,6 @@ import android.view.View;
 
 public class CorrdinateUtils {
 
-    private static int x;
-    private static int y;
-
     /**
      * 获取点击屏幕的位置
      *
@@ -28,8 +25,8 @@ public class CorrdinateUtils {
                     float rawX = event.getRawX();
                     float rawY = event.getRawY();
 
-                    x = (int) rawX;
-                    y = (int) rawY;
+                    int x = (int) rawX;
+                    int y = (int) rawY;
 
                     break;
                 /**
@@ -64,17 +61,69 @@ public class CorrdinateUtils {
 
     /**
      * x轴点击位置
+     *
      * @return
      */
-    public static int getX(){
-        return x;
+    public static int getX(MotionEvent event) {
+        try {
+            int x = 0;
+            switch (event.getAction()) {
+                /**
+                 * 触屏位置
+                 */
+                case MotionEvent.ACTION_DOWN:
+                    float rawX = event.getRawX();
+                    x = (int) rawX;
+                    break;
+                /**
+                 * 触屏实时位置
+                 */
+                case MotionEvent.ACTION_MOVE:
+                    break;
+                /**
+                 * 离开屏幕的位置
+                 */
+                case MotionEvent.ACTION_UP:
+                    break;
+            }
+            return x;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     /**
      * y轴点击位置
+     *
      * @return
      */
-    public static int getY(){
-        return y;
+    public static int getY(MotionEvent event) {
+        try {
+            int y = 0;
+            switch (event.getAction()) {
+                /**
+                 * 触屏位置
+                 */
+                case MotionEvent.ACTION_DOWN:
+                    float rawY = event.getRawY();
+                    y = (int) rawY;
+                    break;
+                /**
+                 * 触屏实时位置
+                 */
+                case MotionEvent.ACTION_MOVE:
+                    break;
+                /**
+                 * 离开屏幕的位置
+                 */
+                case MotionEvent.ACTION_UP:
+                    break;
+            }
+            return y;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

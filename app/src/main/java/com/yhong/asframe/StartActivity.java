@@ -21,8 +21,7 @@ import cn.yhong.aframework.permissions.PermissionUtils;
 /**
  * 启动页
  */
-public class StartActivity extends BaseActivity
-        implements Animation.AnimationListener {
+public class StartActivity extends BaseActivity implements Animation.AnimationListener {
 
     @Override
     public void initContent(Bundle savedInstanceState) {
