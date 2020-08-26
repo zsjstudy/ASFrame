@@ -36,22 +36,22 @@ import cn.yhong.aframework.utils.AtyUtils;
  * 头像上传
  */
 public class UploadAvatarActivity extends BaseImageActivity implements View.OnClickListener, OnCallbackListener
-    ,OnRefreshListener{
+        , OnRefreshListener {
 
     @Override
     public View initSkinTitleBar() {
         return new InitTitleBar.Builder(mActivity).setTitle("头像上传")
-                .setTitleColor(ContextCompat.getColor(mActivity,R.color.colorWhite))
+                .setTitleColor(ContextCompat.getColor(mActivity, R.color.colorWhite))
                 .setTitleBold()
 //                .setTitleTypeface(Typeface.defaultFromStyle(Typeface.NORMAL))
                 .setMenuText("保存")
-                .setMenuTextColor(ContextCompat.getColor(mActivity,R.color.colorWhite))
+                .setMenuTextColor(ContextCompat.getColor(mActivity, R.color.colorWhite))
                 .setMenuImage(getResources().getDrawable(R.drawable.back))
                 .setMenuImage2(getResources().getDrawable(R.drawable.back))
                 .setMenuListener(new InitTitleBar.OnClickMenuListener() {
                     @Override
                     public void onClickMenu(View view) {
-                        AtyUtils.showShort(mActivity,"保存成功",false);
+                        AtyUtils.showShort(mActivity, "保存成功", false);
                     }
                 })
                 .create().getView();
@@ -97,7 +97,9 @@ public class UploadAvatarActivity extends BaseImageActivity implements View.OnCl
         tv_constellation.setOnClickListener(this);
         tv_area.setOnClickListener(this);
 
-        smartRefreshLayout.setOnRefreshListener(this);
+        if (smartRefreshLayout != null) {
+            smartRefreshLayout.setOnRefreshListener(this);
+        }
     }
 
     @Override

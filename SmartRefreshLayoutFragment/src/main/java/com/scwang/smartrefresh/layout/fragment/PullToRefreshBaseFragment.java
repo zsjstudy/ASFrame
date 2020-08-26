@@ -434,14 +434,14 @@ public abstract class PullToRefreshBaseFragment<V extends View> extends AfFragme
         }
     }
 
-    /**
-     * 开始加载更多
-     */
-    public void startLoadMore() {
-        if (refreshLayout != null) {
-            refreshLayout.autoLoadMore(500);
-        }
-    }
+//    /**
+//     * 开始加载更多
+//     */
+//    public void startLoadMore() {
+//        if (refreshLayout != null) {
+//            refreshLayout.autoLoadMore(500);
+//        }
+//    }
 
     /**
      * 停止加载更多

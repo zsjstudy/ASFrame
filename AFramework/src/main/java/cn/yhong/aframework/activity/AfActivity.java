@@ -223,7 +223,7 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
     }
 
     /**
-     * 初始化滚动布局，类似于ios的弹性上来拉拽
+     * 初始化滚动布局，类似于ios的弹性上下拉拽
      */
     public SmartRefreshLayout initSmartRefreshLayout() {
         return null;

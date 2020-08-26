@@ -170,7 +170,7 @@ public class InitTitleBar extends DefaultTitleViewBar implements View.OnClickLis
         iv_share.setTextSize(textMenuSize);
 
         if (imageMenu != null && imageMenu2 != null) {
-            if (true) {
+            if (true) {//这里可以改为暗夜模式的判断
 //            if (API.isNight()) {
                 imageMenu.setBounds(0, 0, imageMenu.getIntrinsicWidth(),
                         imageMenu.getIntrinsicHeight());
@@ -391,9 +391,6 @@ public class InitTitleBar extends DefaultTitleViewBar implements View.OnClickLis
 
     public OnClickMenuListener onClickMenuListener;
 
-    public OnClickMenuListener getOnClickMenuListener() {
-        return onClickMenuListener;
-    }
 
     public void setOnClickMenuListener(OnClickMenuListener onClickMenuListener) {
         this.onClickMenuListener = onClickMenuListener;
