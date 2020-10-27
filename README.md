@@ -1,5 +1,11 @@
 # ASFrame
 
+此版本是适用于3.0.1
+ compileSdkVersion: 26,
+ buildToolsVersion: "27.0.2",
+ minSdkVersion    : 16,
+ targetSdkVersion : 26,
+
 ## 如何使用它？
 
 - 先在 build.gradle(Project:XXXX) 的 repositories 添加:
