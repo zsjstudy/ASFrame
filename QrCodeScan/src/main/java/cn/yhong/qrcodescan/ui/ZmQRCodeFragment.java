@@ -45,6 +45,7 @@ import cn.yhong.qrcodescan.decoding.InactivityTimer;
 import cn.yhong.qrcodescan.decoding.RGBLuminanceSource;
 import cn.yhong.qrcodescan.view.ViewfinderView;
 
+
 /**
  * 二维码扫描的Fragment
  */
